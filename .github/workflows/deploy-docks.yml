@@ -16,10 +16,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: Run ci
+        run: npm ci
 
-      - run: npm ci
-
-      - run: npm run build-storybook
+      - name: Build storybook
+        run: npm run build-storybook
 
       - name: Deploy Storybook
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
