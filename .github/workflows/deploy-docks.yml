@@ -17,7 +17,7 @@ jobs:
         with:
           node-version: 16
       - name: Run ci
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Build storybook
         run: npm run build-storybook
